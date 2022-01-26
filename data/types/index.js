@@ -13,6 +13,10 @@ const typeDefs = gql`
     users: [User]
     user(id: ID, email: String): User
   }
+
+  type Mutation {
+    updateUser(id: ID!, first_name: String, last_name: String, email: String, country: String): User
+  }
 `;
 
 module.exports = [ typeDefs ];

@@ -15,4 +15,15 @@ async function getUser(args, context) {
   return userRecord[0];
 }
 
-module.exports = { getUser, getUsers };
+async function updateUser(args, context) {
+  const { id } = args;
+  const { knex } = context;
+
+  const userRecord = await knex('testusers').where({
+    id: +id 
+  }).update(args, ["*"]);
+
+  return userRecord[0];
+}
+
+module.exports = { getUser, getUsers, updateUser };
