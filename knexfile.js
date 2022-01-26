@@ -1,10 +1,13 @@
-// Update with your config settings.
+const config = require('./config');
+
 const dbConfig = {
     client: 'postgresql',
     connection: {
-      database: 'test',
-      user:     'testuser',
-      password: 'testpassword'
+      host:     config.get('db.host'),
+      port:     config.get('db.port'),
+      database: config.get('db.database'),
+      user:     config.get('db.user'),
+      password: config.get('db.password')
     },
     pool: {
       min: 2,

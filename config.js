@@ -33,19 +33,19 @@ const config = convict({
     user: {
       doc: 'Username for the db',
       format: String,
-      default: '',
+      default: 'testuser',
       env: 'DB_USER',
     },
     password: {
       doc: 'Password for the db',
       format: String,
-      default: '',
+      default: 'testpassword',
       env: 'DB_PASS',
     },
     database: {
       doc: 'Db name',
       format: String,
-      default: '',
+      default: 'test',
       env: 'DB_NAME',
     },
   },
